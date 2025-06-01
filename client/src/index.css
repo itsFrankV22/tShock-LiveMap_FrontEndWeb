@@ -1,0 +1,196 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 207 90% 54%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 60 4.8% 95.9%;
+  --secondary-foreground: 24 9.8% 10%;
+  --accent: 60 4.8% 95.9%;
+  --accent-foreground: 24 9.8% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 20 14.3% 4.1%;
+  --radius: 0.5rem;
+  
+  /* Gaming theme colors */
+  --gaming-dark: 15 23% 6%; /* #0F172A */
+  --gaming-slate: 20 24% 12%; /* #1E293B */
+  --gaming-lighter: 20 21% 20%; /* #334155 */
+  --neon-green: 160 84% 39%; /* #10B981 */
+  --neon-blue: 217 91% 60%; /* #3B82F6 */
+  --neon-yellow: 32 95% 48%; /* #F59E0B */
+  --neon-red: 0 84% 60%; /* #EF4444 */
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 207 90% 54%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply antialiased bg-background text-foreground;
+    font-family: 'ANDRYB', 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+  }
+
+  .neon-glow {
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+  }
+
+  .map-container {
+    background: linear-gradient(45deg, hsl(var(--gaming-dark)) 0%, hsl(var(--gaming-slate)) 50%, hsl(var(--gaming-lighter)) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+}
+
+@layer utilities {
+  .bg-gaming-dark {
+    background-color: hsl(var(--gaming-dark));
+  }
+
+  .bg-gaming-slate {
+    background-color: hsl(var(--gaming-slate));
+  }
+
+  .bg-gaming-lighter {
+    background-color: hsl(var(--gaming-lighter));
+  }
+
+  .text-neon-green {
+    color: hsl(var(--neon-green));
+  }
+
+  .text-neon-blue {
+    color: hsl(var(--neon-blue));
+  }
+
+  .text-neon-yellow {
+    color: hsl(var(--neon-yellow));
+  }
+
+  .text-neon-red {
+    color: hsl(var(--neon-red));
+  }
+
+  .text-neon-purple {
+    color: #a855f7;
+  }
+
+  .bg-neon-green {
+    background-color: hsl(var(--neon-green));
+  }
+
+  .bg-neon-blue {
+    background-color: hsl(var(--neon-blue));
+  }
+
+  .bg-neon-yellow {
+    background-color: hsl(var(--neon-yellow));
+  }
+
+  .bg-neon-red {
+    background-color: hsl(var(--neon-red));
+  }
+
+  .border-gaming-lighter {
+    border-color: hsl(var(--gaming-lighter));
+  }
+
+  .border-neon-green {
+    border-color: hsl(var(--neon-green));
+  }
+
+  .border-neon-yellow\/30 {
+    border-color: hsl(var(--neon-yellow) / 0.3);
+  }
+
+  .hover\:shadow-neon-blue:hover {
+    box-shadow: 0 0 10px hsl(var(--neon-blue) / 0.3);
+  }
+
+  .hover\:shadow-neon-red:hover {
+    box-shadow: 0 0 10px hsl(var(--neon-red) / 0.3);
+  }
+
+  .hover\:bg-neon-blue\/20:hover {
+    background-color: hsl(var(--neon-blue) / 0.2);
+  }
+
+  .hover\:bg-neon-green\/20:hover {
+    background-color: hsl(var(--neon-green) / 0.2);
+  }
+
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.chat-message {
+  animation: slideInRight 0.3s ease-out;
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+
