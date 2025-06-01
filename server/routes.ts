@@ -3,10 +3,10 @@ import { createServer, type Server } from "http";
 import { WebSocketServer, WebSocket } from "ws";
 import rateLimit from "express-rate-limit";
 
-const BASE_URL = process.env.TERRARIA_BASE_URL || 'http://5.135.136.110:8127';
-const TOKEN = process.env.TERRARIA_TOKEN || 'terrariaserversFV';
+const BASE_URL = process.env.TERRARIA_BASE_URL || 'http://IP:PORT';
+const TOKEN = process.env.TERRARIA_TOKEN || 'yourtoken';
 // const WS_REAL_URL = process.env.TERRARIA_WS_URL || 'ws://localhost:8585/map/ws/';
-const WS_REAL_URL = process.env.TERRARIA_WS_URL || 'ws://n3.mcst.io:8132/map/ws/';
+const WS_REAL_URL = process.env.TERRARIA_WS_URL || 'ws://IP:PORT/map/ws/';
 
 // Rate limiting for API endpoints
 const apiLimiter = rateLimit({
